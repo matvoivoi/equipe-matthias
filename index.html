@@ -1,0 +1,714 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Équipe">
+<meta name="theme-color" content="#0e0d0c">
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="apple-touch-icon.png">
+<title>L'équipe de Matthias</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>
+.tm { align-content: start; }  /* sans le moteur Dashboard, la grille étirait les rangées sur 100vh */
+:root { color-scheme: dark; --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 12px; --cds-gap-lg: 20px;
+  --cds-pad-xs: 4px; --cds-pad-sm: 8px; --cds-pad-md: 12px; --cds-pad-lg: 16px; --cds-radius: 12px;
+  --cds-font-size-caption: 13px; --cds-font-size-body: 15px; --cds-font-size-heading: 17px; --cds-font-size-title: 26px;
+  --cds-font-weight-medium: 600; --cds-ease-out: cubic-bezier(.2,.8,.2,1); --cds-dur-slow: .35s;
+  --cds-surface-popover: #242220; --cds-border: #2e2b28; --cds-shadow-popover: 0 8px 24px rgba(0,0,0,.4);
+  --cds-text-secondary: #b4b4b4; --cds-chart-muted: #5b5753; --cds-chart-reference: #6b6661; --cds-chart-axis: #8a857f;
+  --font-anthropic-serif: Georgia, "Times New Roman", serif;
+  --font-anthropic-sans: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif; }
+body { background: #0e0d0c; color: #ffffff; }
+</style>
+<meta name="dash-one-writer">
+<style>
+#dash-root { --dash-gutter: 16px; }
+.tm { max-width: 46rem; margin-inline: auto; display: grid; gap: var(--cds-gap-md); font-family: var(--font-anthropic-sans); }
+.tm h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; line-height: 1.2; }
+.tm h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.tm .lead { margin: var(--cds-gap-xs) 0 0; color: var(--color-fg-muted); line-height: 1.5; }
+.tm .lead b { color: var(--color-fg); font-weight: 600; font-variant-numeric: tabular-nums; }
+.tm .card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; }
+.tm .note { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: var(--cds-gap-xs) 0 var(--cds-gap-md); }
+.tm .hero .v { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 3rem; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.tm .chg { font-variant-numeric: tabular-nums; margin-top: var(--cds-gap-xs); }
+.tm .up { color: var(--color-ok); }
+.tm .down { color: var(--color-bad); }
+.tm .flat { color: var(--color-fg-muted); }
+.tm .track { height: 12px; border-radius: 999px; background: var(--cds-chart-grid); overflow: hidden; margin: var(--cds-gap-md) 0 var(--cds-gap-xs); }
+.tm .fill { height: 100%; border-radius: 999px; background: var(--color-ok); }
+.tm .ends { display: flex; justify-content: space-between; gap: var(--cds-gap-sm); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.tm .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--cds-gap-md); }
+@media (min-width: 40rem) { .tm .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.tm .tile .n { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; display: block; }
+.tm .tile .l { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tm .chart { position: relative; min-height: 200px; }
+.tm .tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tm .tip span { color: var(--cds-text-secondary); display: block; }
+.tm table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.tm th { text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); padding: var(--cds-pad-xs) var(--cds-pad-xs) var(--cds-pad-xs) 0; border-bottom: 1px solid var(--color-border-line); }
+.tm td { padding: var(--cds-pad-sm) var(--cds-pad-xs) var(--cds-pad-sm) 0; border-bottom: 1px solid var(--color-border-line); vertical-align: middle; }
+.tm .r { text-align: right; padding-right: 0; }
+.tm .partcell { display: flex; align-items: center; gap: var(--cds-gap-sm); }
+.tm .mini { flex: 1; height: 8px; border-radius: 999px; background: var(--cds-chart-grid); overflow: hidden; min-width: 3rem; }
+.tm .mini i { display: block; height: 100%; border-radius: 999px; }
+.tm .feed { list-style: none; margin: 0; padding: 0; }
+.tm .feed li { padding: var(--cds-pad-md) 0; border-top: 1px solid var(--color-border-line); }
+.tm .feed li:first-child { border-top: 0; padding-top: 0; }
+.tm .head { display: flex; align-items: center; gap: var(--cds-gap-sm); flex-wrap: wrap; }
+.tm .tk { font-weight: 600; }
+.tm .badge { font-size: var(--cds-font-size-caption); padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; }
+.tm .when { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-left: auto; }
+.tm .feed p { margin: var(--cds-gap-xs) 0 0; line-height: 1.45; }
+.tm .legend { display: flex; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-bottom: var(--cds-gap-sm); }
+.tm .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.tm details { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tm summary { cursor: pointer; color: var(--color-fg); }
+.tm dl { display: grid; grid-template-columns: auto 1fr; gap: var(--cds-gap-xs) var(--cds-gap-md); margin: var(--cds-gap-md) 0 0; }
+.tm dt { color: var(--color-fg); }
+.tm dd { margin: 0; }
+.tm .live { margin: var(--cds-gap-xs) 0 0; font-weight: 600; }
+.tm .live.on { color: var(--color-ok); }
+.tm .live.off { color: var(--color-warn); }
+.tm .org { display: grid; gap: 0; margin-top: var(--cds-gap-md); }
+.tm .lvlname { display: block; text-align: center; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-bottom: var(--cds-gap-xs); }
+.tm .row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--cds-gap-sm); }
+.tm .link { width: 2px; height: 16px; background: var(--color-border-line); margin: var(--cds-gap-xs) auto; }
+.tm .mate { flex: 1 1 8rem; max-width: 15rem; min-width: 0; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); padding: var(--cds-pad-sm); display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; cursor: pointer; }
+.tm .mate b { font-size: var(--cds-font-size-body); }
+.tm .job { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); display: block; }
+.tm .av { width: 64px; height: 64px; }
+.tm .av svg { width: 64px; height: 64px; display: block; }
+.tm .verdict { font-size: var(--cds-font-size-caption); font-weight: 600; }
+.tm .dit { margin: 0; font-size: var(--cds-font-size-caption); line-height: 1.4; text-align: left; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.tm .mate.open .dit { -webkit-line-clamp: unset; }
+@media (prefers-reduced-motion: no-preference) {
+  .tm .org.busy .av svg { animation: tm-bob 1.4s var(--cds-ease-out) infinite; }
+  .tm .org.busy .mate:nth-child(2n) .av svg { animation-delay: .35s; }
+}
+@keyframes tm-bob { 50% { transform: translateY(-3px); } }
+.tm .top { position: sticky; top: 0; z-index: 5; background: var(--color-bg); padding: var(--cds-pad-sm) 0; display: grid; gap: var(--cds-gap-sm); }
+.tm .tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 4px; background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: 999px; }
+.tm .tab { appearance: none; border: 0; background: transparent; color: var(--color-fg-muted); font: inherit; font-size: var(--cds-font-size-caption); font-weight: 600; min-height: 40px; padding: 0 4px; border-radius: 999px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.tm .tab[aria-selected=true] { background: var(--color-bg); color: var(--color-fg); box-shadow: 0 1px 3px rgba(0, 0, 0, .14); }
+.tm .tab:focus-visible { outline: 2px solid var(--color-ok); outline-offset: 2px; }
+.tm .panel { display: grid; gap: var(--cds-gap-lg); }
+.tm .panel[hidden] { display: none; }
+.tm .panel > .lead { margin: 0; }
+.tm .chip { justify-self: start; margin: 0; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--color-border-line); background: var(--color-panel); font-size: var(--cds-font-size-caption); }
+@media (prefers-reduced-motion: no-preference) { .tm .panel:not([hidden]) { animation: tm-in var(--cds-dur-slow) var(--cds-ease-out); } }
+@keyframes tm-in { from { opacity: 0; transform: translateY(6px); } }
+.tm [data-dash-source-state=empty] { color: transparent; }
+.tm [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+
+/* Thème « nuit » : sol noir chaud, cartes un cran plus claires, une seule couleur sur les données (l'orange Claude). */
+#dash-root { --dash-gutter: 0px; }
+.tm { --tm-ground: #0e0d0c; --tm-card: #181716; --tm-raised: #242220; --tm-accent: #D97757; --tm-muted: #b4b4b4; --tm-faint: #949494;
+  --color-fg: #ffffff; --color-fg-muted: #b4b4b4; --color-bg: #0e0d0c; --color-panel: #181716; --color-border-line: #262422;
+  --color-ok: #4cc38a; --color-bad: #e5484d; --color-warn: #e5a93b; --cds-chart-grid: #262422; --cds-chart-axis: #3a3836;
+  --cds-chart-reference: #6b6b6b; --cds-chart-muted: #3d3a37; --cds-surface-popover: #2a2827; --cds-border: #3a3836; --cds-text-secondary: #b4b4b4;
+  background: var(--tm-ground); color: #ffffff; max-width: 34rem; padding: 0 16px 32px; min-height: 100vh; }
+@media (min-width: 40rem) { .tm { border-radius: 24px; margin-block: 12px; } }
+.tm .top { background: var(--tm-ground); padding: 14px 0 10px; }
+.tm .brand { display: flex; align-items: center; gap: 10px; }
+.tm .brand .av, .tm .brand .av svg { width: 34px; height: 34px; }
+.tm h1 { font-family: var(--font-anthropic-sans); font-weight: 600; font-size: 20px; letter-spacing: -0.01em; }
+.tm .tabs { background: var(--tm-card); border: 0; padding: 4px; }
+.tm .tab { color: #bbbbbb; min-height: 40px; transition: color .2s, background-color .25s, transform .12s; }
+.tm .tab:active { transform: scale(.95); }
+.tm .tab[aria-selected=true] { background: #ffffff; color: #000000; box-shadow: none; }
+.tm .card { background: var(--tm-card); border: 0; border-radius: 20px; padding: 18px; }
+.tm .card.tile { border-radius: 18px; padding: 14px 16px; }
+.tm .note { color: var(--tm-faint); }
+.tm .lead { color: var(--tm-muted); font-size: 15px; }
+.tm .lead b { color: #ffffff; }
+.tm .hero { background: var(--tm-raised); }
+.tm .hero .v { font-family: var(--font-anthropic-sans); font-weight: 600; font-size: 46px; letter-spacing: -0.03em; }
+.tm .track { background: #0e0d0c; height: 10px; }
+.tm .fill { background: var(--tm-accent); }
+.tm .tile .n { font-family: var(--font-anthropic-sans); font-weight: 600; font-size: 26px; letter-spacing: -0.02em; }
+.tm .chip { background: var(--tm-card); border: 0; color: var(--tm-muted); display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; }
+.tm .chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #6b6b6b; flex: none; }
+.tm .chip.on { color: #ffffff; }
+.tm .chip.on::before { background: var(--color-ok); }
+.tm .chip.off::before { background: var(--color-warn); }
+.tm .live:not(.chip) { color: var(--tm-muted); }
+.tm .live.on:not(.chip) { color: var(--color-ok); }
+.tm .mate { background: var(--tm-raised); border: 0; border-radius: 16px; transition: transform .15s, background-color .2s; }
+.tm .mate:active { transform: scale(.97); }
+.tm .mate.open { background: #2e2b29; }
+.tm .link { background: #2e2b29; }
+.tm .lvlname { color: var(--tm-faint); }
+.tm th { color: var(--tm-faint); border-bottom-color: #262422; }
+.tm td { border-bottom-color: #201e1c; }
+.tm .badge { border: 0; background: #222222; }
+.tm .badge.up { background: #16281f; }
+.tm .badge.down { background: #2c1a1c; }
+.tm .feed li { border-top-color: #262422; }
+.tm details { background: var(--tm-card); border-radius: 20px; padding: 16px 18px; }
+.tm .eye { transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .tm .panel:not([hidden]) > * { animation: tm-in .5s var(--cds-ease-out) both; }
+  .tm .panel:not([hidden]) > *:nth-child(2) { animation-delay: .06s; }
+  .tm .panel:not([hidden]) > *:nth-child(3) { animation-delay: .12s; }
+  .tm .panel:not([hidden]) > *:nth-child(4) { animation-delay: .18s; }
+  .tm .panel:not([hidden]) > *:nth-child(5) { animation-delay: .24s; }
+  .tm .panel:not([hidden]) .lvl { animation: tm-in .5s var(--cds-ease-out) both; }
+  .tm .panel:not([hidden]) .lvl:nth-child(3) { animation-delay: .08s; }
+  .tm .panel:not([hidden]) .lvl:nth-child(5) { animation-delay: .16s; }
+  .tm .panel:not([hidden]) .lvl:nth-child(7) { animation-delay: .24s; }
+  .tm .panel:not([hidden]) .lvl:nth-child(9) { animation-delay: .32s; }
+  .tm .panel:not([hidden]) .lvl:nth-child(11) { animation-delay: .40s; }
+  .tm .panel:not([hidden]) .lvl:nth-child(13) { animation-delay: .48s; }
+  .tm .fill { animation: tm-grow 1.2s var(--cds-ease-out) both; }
+  .tm .chip.on::before { animation: tm-pulse 1.6s ease-out infinite; }
+  .tm .av svg { animation: tm-breathe 3.2s ease-in-out infinite; }
+  .tm .mate:nth-child(2n) .av svg { animation-delay: -1.1s; }
+  .tm .mate:nth-child(3n) .av svg { animation-delay: -2.2s; }
+  .tm .org.busy .av svg { animation: tm-bob .7s ease-in-out infinite; }
+  .tm .eye { animation: tm-blink 5s infinite; }
+  .tm .mate:nth-child(2n) .eye { animation-delay: -1.7s; }
+  .tm .mate:nth-child(3n) .eye { animation-delay: -3.3s; }
+}
+@keyframes tm-grow { from { width: 0; } }
+@keyframes tm-pulse { 0% { box-shadow: 0 0 0 0 rgba(76, 195, 138, .6); } 100% { box-shadow: 0 0 0 8px rgba(76, 195, 138, 0); } }
+@keyframes tm-breathe { 50% { transform: translateY(-1.5px); } }
+@keyframes tm-blink { 0%, 94%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
+</style>
+
+<div class="tm">
+  <header class="top">
+    <div class="brand"><div class="av" data-draw="avatar" data-kind="mascotte"></div><h1>L'équipe de Matthias</h1></div>
+    <nav class="tabs" role="tablist" aria-label="Rubriques">
+      <button class="tab" role="tab" data-tab="accueil" aria-selected="true">Accueil</button>
+      <button class="tab" role="tab" data-tab="equipe" aria-selected="false">Équipe</button>
+      <button class="tab" role="tab" data-tab="decisions" aria-selected="false">Décisions</button>
+      <button class="tab" role="tab" data-tab="argent" aria-selected="false">Argent</button>
+    </nav>
+  </header>
+  <div class="panel" data-panel="accueil" id="accueil">
+    <p class="lead">Portefeuille fictif à <b data-draw="val" data-source="objectif" data-field="valeur_eur">—</b>, soit <b data-draw="evo" data-source="objectif" data-field="evolution">—</b> depuis le nouveau départ. Pour atteindre <b data-draw="goal">—</b> le <b data-draw="goaldate">—</b>, il faudrait <b data-draw="rythme" data-source="objectif" data-field="rythme_requis">—</b> par séance pendant <b data-draw="seances" data-source="objectif" data-field="seances_restantes">—</b> séances.</p>
+    <p class="live chip" data-draw="live" data-source="equipe">—</p>
+  <section class="card hero" id="objectif">
+    <h2>Objectif de la semaine</h2>
+    <p class="note">Valeur au dernier passage du robot : <span data-draw="when" data-source="objectif" data-field="moment">—</span></p>
+    <div class="v" data-draw="valbig" data-source="objectif" data-field="valeur_eur">—</div>
+    <div class="chg" data-draw="evochg" data-source="objectif" data-field="evolution">—</div>
+    <div class="track" data-draw="progress" data-source="objectif" data-field="progression"></div>
+    <div class="ends"><span>Départ <span data-draw="dep" data-source="objectif" data-field="depart_eur">—</span></span><span><span data-draw="pctgoal" data-source="objectif" data-field="progression">—</span> du chemin</span><span>Objectif <span data-draw="goal">—</span></span></div>
+  </section>
+  <section id="activite-jour">
+    <h2>Au travail, journée du <span data-draw="jourdate" data-source="jour" data-field="jour">—</span></h2>
+    <p class="note">Heure belge. Le robot passe toutes les 20 minutes pendant l'ouverture de la bourse américaine.</p>
+    <div class="tiles">
+      <div class="card tile"><span class="n" data-draw="passages" data-source="jour" data-field="passages">—</span><span class="l">passages du robot</span></div>
+      <div class="card tile"><span class="n" data-draw="analyses" data-source="jour" data-field="analyses">—</span><span class="l">analyses complètes</span></div>
+      <div class="card tile"><span class="n" data-draw="ordres" data-source="jour" data-field="ordres">—</span><span class="l">ordres passés</span></div>
+      <div class="card tile"><span class="n" data-draw="heure" data-source="objectif" data-field="moment">—</span><span class="l">dernier passage</span></div>
+    </div>
+  </section>
+  <section class="card" id="courbe">
+    <h2>Valeur du portefeuille</h2>
+    <p class="note">En euros, à chaque passage du robot. Ligne pointillée : le départ.</p>
+    <div class="chart" data-draw="courbe" data-source="valeur"></div>
+  </section>
+  </div>
+  <div class="panel" data-panel="equipe" id="onglet-equipe" hidden>
+  <section class="card" id="equipe">
+    <h2>L'équipe en direct</h2>
+    <p class="live" data-draw="live" data-source="equipe">—</p>
+    <p class="note">Ce que chacun a dit au dernier passage terminé : <b data-draw="runtk" data-source="equipe" data-field="action" data-where="role_id=pm">—</b>, <span data-draw="runday" data-source="equipe" data-field="jour" data-where="role_id=pm">—</span>. Touchez une carte pour lire la suite.</p>
+    <div class="org" data-org>
+      <div class="lvl"><span class="lvlname">Superviseur</span><div class="row">
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="superviseur"></div><div><b>Superviseur</b><span class="job">Garde le quota, met l'équipe en pause</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=superviseur" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=superviseur" data-field="dit">—</p></article>
+      </div></div>
+      <div class="link"></div>
+      <div class="lvl"><span class="lvlname">Décision, mémoire et exécution</span><div class="row">
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="pm"></div><div><b>Portfolio Manager</b><span class="job">Décision finale</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=pm" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=pm" data-field="dit">—</p></article>
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="reflecteur"></div><div><b>Réflecteur</b><span class="job">Tire les leçons, le vendredi</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=reflecteur" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=reflecteur" data-field="dit">—</p></article>
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="robot"></div><div><b>Robot d'ordres</b><span class="job">Passe les ordres</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=robot" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=robot" data-field="dit">—</p></article>
+      </div></div>
+      <div class="link"></div>
+      <div class="lvl"><span class="lvlname">Débat de risque</span><div class="row">
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="agressif"></div><div><b>Analyste agressif</b><span class="job">Pousse à oser</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=agressif" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=agressif" data-field="dit">—</p></article>
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="neutre"></div><div><b>Analyste neutre</b><span class="job">Arbitre les deux camps</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=neutre" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=neutre" data-field="dit">—</p></article>
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="prudent"></div><div><b>Analyste prudent</b><span class="job">Protège le capital</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=prudent" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=prudent" data-field="dit">—</p></article>
+      </div></div>
+      <div class="link"></div>
+      <div class="lvl"><span class="lvlname">Proposition</span><div class="row">
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="trader"></div><div><b>Trader</b><span class="job">Chiffre la transaction</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=trader" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=trader" data-field="dit">—</p></article>
+      </div></div>
+      <div class="link"></div>
+      <div class="lvl"><span class="lvlname">Plan d'investissement</span><div class="row">
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="rm"></div><div><b>Research Manager</b><span class="job">Tranche le débat</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=rm" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=rm" data-field="dit">—</p></article>
+      </div></div>
+      <div class="link"></div>
+      <div class="lvl"><span class="lvlname">Débat d'investissement</span><div class="row">
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="bull"></div><div><b>Chercheur haussier</b><span class="job">L'ange qui défend l'achat</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=bull" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=bull" data-field="dit">—</p></article>
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="bear"></div><div><b>Chercheur baissier</b><span class="job">Le petit démon qui cherche les failles</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=bear" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=bear" data-field="dit">—</p></article>
+      </div></div>
+      <div class="link"></div>
+      <div class="lvl"><span class="lvlname">Analystes</span><div class="row">
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="marche"></div><div><b>Analyste marché</b><span class="job">Graphiques et tendances</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=marche" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=marche" data-field="dit">—</p></article>
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="sentiment"></div><div><b>Analyste sentiment</b><span class="job">Réseaux sociaux</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=sentiment" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=sentiment" data-field="dit">—</p></article>
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="actualites"></div><div><b>Analyste actualités</b><span class="job">Presse et macro</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=actualites" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=actualites" data-field="dit">—</p></article>
+        <article class="mate"><div class="av" data-draw="avatar" data-kind="fondamentaux"></div><div><b>Analyste fondamentaux</b><span class="job">Comptes de l'entreprise</span></div><span class="verdict" data-draw="verdict" data-source="equipe" data-where="role_id=fondamentaux" data-field="verdict">—</span><p class="dit" data-draw="dit" data-source="equipe" data-where="role_id=fondamentaux" data-field="dit">—</p></article>
+      </div></div>
+    </div>
+  </section>
+  </div>
+  <div class="panel" data-panel="decisions" id="onglet-decisions" hidden>
+  <section class="card" id="decisions">
+    <h2>Dernières décisions de l'équipe</h2>
+    <p class="note">La décision finale du Portfolio Manager pour chaque action analysée, la plus récente en haut.</p>
+    <ul class="feed" data-draw="feed" data-source="decisions"></ul>
+  </section>
+  <section class="card" id="ordres">
+    <h2>Ordres passés</h2>
+    <p class="note">Sur le compte paper, depuis le nouveau départ, le plus récent en haut.</p>
+    <p class="note" data-empty="ordres" hidden>Aucun ordre pour l'instant.</p>
+    <table data-source="ordres" data-row-key="moment,action">
+      <thead><tr><th data-field="moment">Quand</th><th data-field="action">Action</th><th data-field="sens">Sens</th><th data-field="montant_eur" class="r">Montant</th></tr></thead>
+      <tbody data-draw="ord"></tbody>
+    </table>
+  </section>
+  </div>
+  <div class="panel" data-panel="argent" id="onglet-argent" hidden>
+  <section class="card" id="positions">
+    <h2>Où est l'argent</h2>
+    <p class="note">Répartition au dernier passage, liquidités comprises.</p>
+    <table data-source="positions" data-row-key="action">
+      <thead><tr><th data-field="action">Ligne</th><th data-field="part">Part</th><th data-field="valeur_eur" class="r">Valeur</th></tr></thead>
+      <tbody data-draw="pos"></tbody>
+    </table>
+  </section>
+  <section class="card" id="activite">
+    <h2>Activité jour par jour</h2>
+    <p class="note">Analyses complètes de l'équipe et ordres passés depuis le nouveau départ.</p>
+    <div class="legend"><span><i class="sw" data-sw="0"></i>Analyses</span><span><i class="sw" data-sw="1"></i>Ordres</span></div>
+    <div class="chart" data-draw="activ" data-source="activite"></div>
+  </section>
+  <details>
+    <summary>Comment l'équipe décide et ce qui la protège</summary>
+    <dl>
+      <dt>Acheter</dt><dd>40 % du capital sur l'action.</dd>
+      <dt>Acheter, conviction très forte</dt><dd>Jusqu'à 80 %, seulement quand le Portfolio Manager juge la perte peu probable et le gain important.</dd>
+      <dt>Renforcer</dt><dd>25 % du capital.</dd>
+      <dt>Garder</dt><dd>On ne change rien.</dd>
+      <dt>Alléger, vendre</dt><dd>On sort de l'action.</dd>
+      <dt>Sécurités</dt><dd>Plus aucun achat le reste de la journée après une perte de 5 %. Arrêt complet du robot à 20 % de perte depuis le départ.</dd>
+      <dt>Mise à jour</dt><dd>Cette page est rafraîchie à 18h et 22h en semaine. Argent fictif uniquement.</dd>
+    </dl>
+  </details>
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+<script id="tm-data" type="application/json">{"valeur": [{"moment": "2026-11-06 19:52", "valeur_eur": 100.0, "depart_eur": 100.0}, {"moment": "2026-11-06 21:13", "valeur_eur": 99.92, "depart_eur": 100.0}, {"moment": "2026-11-06 21:33", "valeur_eur": 99.99, "depart_eur": 100.0}, {"moment": "2026-11-06 21:53", "valeur_eur": 100.0, "depart_eur": 100.0}], "positions": [{"action": "ABBV", "valeur_eur": 25.06, "part": 0.2506}, {"action": "LLY", "valeur_eur": 25.05, "part": 0.2505}, {"action": "MA", "valeur_eur": 24.92, "part": 0.2492}, {"action": "V", "valeur_eur": 24.94, "part": 0.2494}, {"action": "Liquidités", "valeur_eur": 0.03, "part": 0.0003}], "decisions": [{"action": "V", "date": "2026-11-06", "note": "Hold", "conviction": "", "resume": "", "rapport": "trading/rapports/V_2026-11-06/9_decision_finale.md"}, {"action": "MA", "date": "2026-11-06", "note": "Overweight", "conviction": "", "resume": "J'entre sur MA à 25 % du capital (environ 27,9 $ sur 111,45 $). Ce n'est ni un Buy à 40 % ni une conviction « Très forte ». Le débat de risque ne porte plus sur la direction ni sur la taille, puisque les trois analystes acceptent 25 % et un stop vers 627 $. Le seul point ouvert…", "rapport": "trading/rapports/MA_2026-11-06/9_decision_finale.md"}, {"action": "LLY", "date": "2026-11-06", "note": "Hold", "conviction": "", "resume": "On conserve la position LLY telle quelle : 27,87 $, soit environ 25 % d'un portefeuille de 111,36 $. C'est déjà le poids d'un Overweight. Aucun achat ni aucune vente au cours de clôture du 06/11 (1 361,04 $). Le plan de recherche, le trader et les trois analystes de risque…", "rapport": "trading/rapports/LLY_2026-11-06/9_decision_finale.md"}, {"action": "COST", "date": "2026-11-06", "note": "Hold", "conviction": "", "resume": "Nous n'entrons pas sur COST aujourd'hui. La position reste à 0 $ et les 55,98 $ de liquidités ne bougent pas, ce qui correspond au Hold du barème (ne rien changer). Ce Hold n'est pas un rejet du dossier : c'est un refus du prix d'entrée de 1 062,05 $, assorti d'un plan d'entrée…", "rapport": "trading/rapports/COST_2026-11-06/9_decision_finale.md"}, {"action": "ABBV", "date": "2026-11-06", "note": "Overweight", "conviction": "", "resume": "Décision : Overweight, soit 25 % du capital (environ 27,9 $ sur 111,45 $), pour une entrée sur ABBV, où le portefeuille n'a aujourd'hui aucune position. Il n'y a pas de ligne de conviction : elle n'existe que pour un Buy, et rien dans ce dossier ne justifie un Buy à 40 %,…", "rapport": "trading/rapports/ABBV_2026-11-06/9_decision_finale.md"}, {"action": "WMT", "date": "2026-11-05", "note": "Hold", "conviction": "", "resume": "Décision : Hold, donc aucun changement. La position WMT reste à 0 % et les 55,98 $ de liquidités restent disponibles pour une entrée conditionnelle en Overweight (25 % du capital, environ 28 $). Pas d'achat aujourd'hui. La qualité de l'entreprise et la tendance ne sont pas…", "rapport": "trading/rapports/WMT_2026-11-05/9_decision_finale.md"}, {"action": "TSLA", "date": "2026-11-02", "note": "Hold", "conviction": "", "resume": "Aucune entrée sur TSLA aujourd'hui (2026-11-02). Les 111,99 $ restent en liquidités, à 0 % sur le titre. Il s'agit d'un report de l'entrée, pas d'une position baissière. Le plan conditionnel du trader est conservé, avec les ajustements de l'analyste neutre pour le rendre…", "rapport": "trading/rapports/TSLA_2026-11-02/9_decision_finale.md"}, {"action": "GOOG", "date": "2026-10-30", "note": "Underweight", "conviction": "", "resume": "Décision : Underweight sur GOOG à 278,90 $. On réduit l'exposition de façon ordonnée, sans liquider. Le « Sell » du trader est en réalité une vente partielle dimensionnée, et c'est ainsi qu'il faut l'exécuter. Les trois analystes de risque valident d'ailleurs ce sens. Leur…", "rapport": "trading/rapports/GOOG_2026-10-30/9_decision_finale.md"}, {"action": "DAL", "date": "2026-10-29", "note": "Underweight", "conviction": "", "resume": "Je confirme la direction du plan de recherche et du trader : Underweight, c'est-à-dire alléger sans sortir. Le débat de risque ne remet pas en cause le diagnostic. En revanche, il corrige à juste titre deux défauts d'exécution du plan : un stop trop serré et un passage trop…", "rapport": "trading/rapports/DAL_2026-10-29/9_decision_finale.md"}, {"action": "AAPL", "date": "2026-10-28", "note": "Underweight", "conviction": "", "resume": "Je retiens Underweight. Nous restons à 0 % d'exposition aujourd'hui : pas d'achat à 345,33 avant le FOMC et les résultats, et pas de vente à découvert. Je suis la convention du trader, qui traduit Underweight par Sell. Comme nous n'avons pas de position, Sell veut dire ici « ne…", "rapport": "trading/rapports/AAPL_2026-10-28/9_decision_finale.md"}], "activite": [{"jour": "2026-11-06", "passages": 4, "analyses": 5, "ordres": 4}], "equipe": [{"role_id": "superviseur", "niveau": 0, "action": "LLY", "jour": "2026-11-06", "verdict": "inconnu", "dit": "Pas encore de contrôle enregistré."}, {"role_id": "pm", "niveau": 1, "action": "LLY", "jour": "2026-11-06", "verdict": "Hold", "dit": "On conserve la position LLY telle quelle : 27,87 $, soit environ 25 % d'un portefeuille de 111,36 $."}, {"role_id": "reflecteur", "niveau": 1, "action": "LLY", "jour": "2026-11-06", "verdict": "8 bilans", "dit": "La vente a eu tort à court terme."}, {"role_id": "robot", "niveau": 1, "action": "LLY", "jour": "2026-11-06", "verdict": "Exécute", "dit": "Dernier passage : 2026-11-06 21:53."}, {"role_id": "agressif", "niveau": 2, "action": "LLY", "jour": "2026-11-06", "verdict": "", "dit": "Je parle en premier, donc je n'ai pas encore d'objection précise des deux autres à réfuter."}, {"role_id": "neutre", "niveau": 2, "action": "LLY", "jour": "2026-11-06", "verdict": "", "dit": "Vous êtes d'accord tous les deux sur le Hold, et moi aussi."}, {"role_id": "prudent", "niveau": 2, "action": "LLY", "jour": "2026-11-06", "verdict": "", "dit": "Je suis d'accord avec l'agressif sur la décision, Hold, mais je conteste presque tous ses arguments et surtout ses deux demandes d'ajustement."}, {"role_id": "trader", "niveau": 3, "action": "LLY", "jour": "2026-11-06", "verdict": "Hold", "dit": "Le plan de recherche recommande Hold."}, {"role_id": "rm", "niveau": 4, "action": "LLY", "jour": "2026-11-06", "verdict": "Hold", "dit": "Ce qui a pesé du côté Bear (et qui empêche de renforcer) :"}, {"role_id": "bull", "niveau": 5, "action": "LLY", "jour": "2026-11-06", "verdict": "", "dit": "Les quatre rapports (marché, sentiment, actualités, fondamentaux) sont disponibles."}, {"role_id": "bear", "niveau": 5, "action": "LLY", "jour": "2026-11-06", "verdict": "", "dit": "Je réponds d'abord à votre question."}, {"role_id": "marche", "niveau": 6, "action": "LLY", "jour": "2026-11-06", "verdict": "", "dit": "Instantané vérifié (séance du 2026-11-06) : ouverture 1350.45, haut 1377.2771, bas 1333.22, clôture 1361.035, volume 2 114 926."}, {"role_id": "sentiment", "niveau": 6, "action": "LLY", "jour": "2026-11-06", "verdict": "", "dit": "overallband : Mildly Bullish"}, {"role_id": "actualites", "niveau": 6, "action": "LLY", "jour": "2026-11-06", "verdict": "", "dit": "Haussier prudent, pas de certitude, Hold à Overweight, pas de gros pari"}, {"role_id": "fondamentaux", "niveau": 6, "action": "LLY", "jour": "2026-11-06", "verdict": "", "dit": "Limite des données : l'outil getfundamentals n'a rien renvoyé (Yahoo a répondu 429 puis 401)."}], "ordres": [{"moment": "2026-11-06 21:13", "action": "ABBV", "sens": "achat", "montant_eur": "24.98"}, {"moment": "2026-11-06 19:52", "action": "V", "sens": "achat", "montant_eur": "25.0"}, {"moment": "2026-11-06 19:52", "action": "MA", "sens": "achat", "montant_eur": "25.0"}, {"moment": "2026-11-06 19:52", "action": "LLY", "sens": "achat", "montant_eur": "25.0"}], "backtest": [{"cas": "AAPL 2026-07-15", "action": "AAPL", "date": "2026-07-15", "note": "Hold", "rendement": -0.035, "alpha": -0.018000000000000002, "juste": "—"}, {"cas": "AAPL 2026-08-12", "action": "AAPL", "date": "2026-08-12", "note": "Underweight", "rendement": 0.02, "alpha": 0.039, "juste": "non"}, {"cas": "AAPL 2026-09-09", "action": "AAPL", "date": "2026-09-09", "note": "Underweight", "rendement": 0.032, "alpha": 0.026000000000000002, "juste": "non"}, {"cas": "AAPL 2026-10-07", "action": "AAPL", "date": "2026-10-07", "note": "Underweight", "rendement": 0.005, "alpha": 0.006999999999999999, "juste": "non"}, {"cas": "DAL 2026-07-15", "action": "DAL", "date": "2026-07-15", "note": "Underweight", "rendement": -0.055, "alpha": -0.038, "juste": "oui"}, {"cas": "DAL 2026-08-12", "action": "DAL", "date": "2026-08-12", "note": "Hold", "rendement": -0.11199999999999999, "alpha": -0.09300000000000001, "juste": "—"}, {"cas": "DAL 2026-09-09", "action": "DAL", "date": "2026-09-09", "note": "Hold", "rendement": 0.015, "alpha": 0.009000000000000001, "juste": "—"}, {"cas": "DAL 2026-10-07", "action": "DAL", "date": "2026-10-07", "note": "Underweight", "rendement": -0.049, "alpha": -0.047, "juste": "oui"}, {"cas": "GOOG 2026-07-15", "action": "GOOG", "date": "2026-07-15", "note": "Overweight", "rendement": -0.1, "alpha": -0.084, "juste": "non"}, {"cas": "GOOG 2026-08-12", "action": "GOOG", "date": "2026-08-12", "note": "Hold", "rendement": -0.017, "alpha": 0.003, "juste": "—"}, {"cas": "GOOG 2026-09-09", "action": "GOOG", "date": "2026-09-09", "note": "Underweight", "rendement": 0.04, "alpha": 0.034, "juste": "non"}, {"cas": "GOOG 2026-10-07", "action": "GOOG", "date": "2026-10-07", "note": "Underweight", "rendement": 0.0, "alpha": 0.003, "juste": "non"}]}</script>
+<script>
+(function () {
+  var RAW = JSON.parse(document.getElementById('tm-data').textContent), sets = {}, draws = [], hooks = [];
+  Object.keys(RAW).forEach(function (k) { sets[k] = { status: 'ok', data: RAW[k] }; });
+  if (!Element.prototype.replaceChildren) Element.prototype.replaceChildren = function () {
+    while (this.firstChild) this.removeChild(this.firstChild);
+    for (var i = 0; i < arguments.length; i++) this.appendChild(typeof arguments[i] === 'string' ? document.createTextNode(arguments[i]) : arguments[i]);
+  };
+  window.dash = {
+    loader: function () {}, setLink: function () {},
+    calc: function (id, o) {
+      try { sets[id] = { status: 'ok', data: o.fn.apply(null, o.inputs.map(function (i) { return sets[i] ? sets[i].data : []; })) }; }
+      catch (e) { sets[id] = { status: 'error', data: [] }; }
+    },
+    data: function (id) { return sets[id] || { status: 'error', data: [] }; },
+    draw: function (name, fn) { draws.push([name, fn]); },
+    onData: function (fn) { hooks.push(fn); }
+  };
+  function render() {
+    draws.forEach(function (d) {
+      var els = document.querySelectorAll('[data-draw="' + d[0] + '"]');
+      for (var i = 0; i < els.length; i++) { try { d[1](els[i]); } catch (e) {} }
+    });
+    hooks.forEach(function (f) { try { f(); } catch (e) {} });
+  }
+  document.addEventListener('DOMContentLoaded', render);
+  // les graphiques mesurent leur largeur : on redessine quand un onglet s'affiche
+  document.addEventListener('click', function (ev) { if (ev.target.closest && ev.target.closest('.tab')) setTimeout(render, 0); });
+})();
+</script>
+<script>(function () {
+// Les routines cloud écrivent toutes les données en JSON dans la cellule A1 de la feuille Google Sheets.
+dash.loader('valeur', {
+  description: 'Partie « valeur » du JSON que les routines écrivent en A1',
+  fn: ({ answer }) => {
+    const a = typeof answer === 'string' ? JSON.parse(answer) : answer;
+    const cell = a && a.values && a.values[0] && a.values[0][0];
+    if (!cell) throw new Error('Cellule A1 vide');
+    return JSON.parse(cell)['valeur'] || [];
+  },
+});
+dash.loader('positions', {
+  description: 'Partie « positions » du JSON que les routines écrivent en A1',
+  fn: ({ answer }) => {
+    const a = typeof answer === 'string' ? JSON.parse(answer) : answer;
+    const cell = a && a.values && a.values[0] && a.values[0][0];
+    if (!cell) throw new Error('Cellule A1 vide');
+    return JSON.parse(cell)['positions'] || [];
+  },
+});
+dash.loader('decisions', {
+  description: 'Partie « decisions » du JSON que les routines écrivent en A1',
+  fn: ({ answer }) => {
+    const a = typeof answer === 'string' ? JSON.parse(answer) : answer;
+    const cell = a && a.values && a.values[0] && a.values[0][0];
+    if (!cell) throw new Error('Cellule A1 vide');
+    return JSON.parse(cell)['decisions'] || [];
+  },
+});
+dash.loader('activite', {
+  description: 'Partie « activite » du JSON que les routines écrivent en A1',
+  fn: ({ answer }) => {
+    const a = typeof answer === 'string' ? JSON.parse(answer) : answer;
+    const cell = a && a.values && a.values[0] && a.values[0][0];
+    if (!cell) throw new Error('Cellule A1 vide');
+    return JSON.parse(cell)['activite'] || [];
+  },
+});
+dash.loader('equipe', {
+  description: 'Partie « equipe » du JSON que les routines écrivent en A1',
+  fn: ({ answer }) => {
+    const a = typeof answer === 'string' ? JSON.parse(answer) : answer;
+    const cell = a && a.values && a.values[0] && a.values[0][0];
+    if (!cell) throw new Error('Cellule A1 vide');
+    return JSON.parse(cell)['equipe'] || [];
+  },
+});
+dash.loader('ordres', {
+  description: 'Partie « ordres » du JSON que les routines écrivent en A1',
+  fn: ({ answer }) => {
+    const a = typeof answer === 'string' ? JSON.parse(answer) : answer;
+    const cell = a && a.values && a.values[0] && a.values[0][0];
+    if (!cell) throw new Error('Cellule A1 vide');
+    return JSON.parse(cell)['ordres'] || [];
+  },
+});
+})();</script>
+<script>(function () {
+dash.calc('objectif', {
+  inputs: ['valeur'],
+  title: "Où en est l'objectif",
+  description: "Dernière valeur, évolution depuis le départ, part du chemin vers l'objectif de la semaine (paliers : 1 000 €, puis capital atteint + 1 000 €) et hausse nécessaire par séance jusqu'à la fin de la semaine.",
+  fn: (valeur) => {
+    const last = valeur[valeur.length - 1];
+    const GOAL = +last.objectif_eur || 1000, END = last.fin || '2026-11-13';
+    const v = +last.valeur_eur, dep = +last.depart_eur;
+    let n = 0;
+    const d = new Date(String(last.moment).slice(0, 10) + 'T12:00:00Z'), end = new Date(END + 'T12:00:00Z');
+    for (d.setUTCDate(d.getUTCDate() + 1); d <= end; d.setUTCDate(d.getUTCDate() + 1)) if (d.getUTCDay() % 6) n++;
+    return [{ moment: last.moment, valeur_eur: v, depart_eur: dep, evolution: v / dep - 1,
+              progression: Math.max(0, Math.min(1, (v - dep) / (GOAL - dep))),
+              seances_restantes: n, objectif: GOAL, fin: END, rythme_requis: n ? Math.pow(GOAL / v, 1 / n) - 1 : null }];
+  },
+});
+
+dash.calc('jour', {
+  inputs: ['activite'],
+  title: 'Dernière journée',
+  description: "La ligne la plus récente de l'activité par jour.",
+  fn: (activite) => activite.slice(-1),
+});
+
+window.tmFmt = {
+  eur: (v) => new Intl.NumberFormat('fr-BE', { style: 'currency', currency: 'EUR' }).format(v),
+  pct: (v) => new Intl.NumberFormat('fr-BE', { style: 'percent', maximumFractionDigits: 1, signDisplay: 'exceptZero' }).format(v),
+  share: (v) => new Intl.NumberFormat('fr-BE', { style: 'percent', maximumFractionDigits: 0 }).format(v),
+  when: (m) => {
+    const d = new Date(String(m).replace(' ', 'T'));
+    return isNaN(d) ? String(m) : d.toLocaleString('fr-BE', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+  },
+  day: (j) => new Date(j + 'T12:00:00').toLocaleDateString('fr-BE', { weekday: 'short', day: 'numeric', month: 'short' }),
+  hour: (m) => String(m).slice(11, 16).replace(':', 'h'),
+  note: { Buy: 'Acheter', Overweight: 'Renforcer', Hold: 'Garder', Underweight: 'Alléger', Sell: 'Vendre' },
+  tone: { Buy: 'up', Overweight: 'up', Hold: 'flat', Underweight: 'down', Sell: 'down' },
+};
+
+const F = window.tmFmt;
+const row = (id) => { const d = dash.data(id); return d.status === 'ok' && d.data.length ? d.data[0] : null; };
+const word = (name, id, f) => dash.draw(name, (el) => { const r = row(id); el.textContent = r ? f(r) : '—'; });
+const tone = (v) => (v > 0 ? 'up' : v < 0 ? 'down' : 'flat');
+
+dash.draw('goal', (el) => { const r = row('objectif'); el.textContent = r ? F.eur(r.objectif).replace(/,00/, '') : '…'; });
+dash.draw('goaldate', (el) => { const r = row('objectif'); if (!r) { el.textContent = '…'; return; } el.textContent = new Date(r.fin + 'T12:00:00').toLocaleDateString('fr-BE', { weekday: 'long', day: 'numeric', month: 'long' }); });
+word('val', 'objectif', (r) => F.eur(r.valeur_eur));
+dash.draw('valbig', (el) => {
+  const r = row('objectif');
+  if (!r) { el.textContent = '—'; return; }
+  const to = +r.valeur_eur, from = el.dataset.shown ? +el.dataset.shown : 0;
+  el.dataset.shown = to;
+  if (from === to || matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = F.eur(to); return; }
+  const t0 = performance.now(), dur = 900;
+  const step = (t) => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = F.eur(from + (to - from) * e); if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+});
+word('dep', 'objectif', (r) => F.eur(r.depart_eur));
+word('evo', 'objectif', (r) => F.pct(r.evolution));
+word('rythme', 'objectif', (r) => (r.rythme_requis == null ? '—' : F.pct(r.rythme_requis)));
+word('seances', 'objectif', (r) => String(r.seances_restantes));
+word('when', 'objectif', (r) => F.when(r.moment));
+word('heure', 'objectif', (r) => F.hour(r.moment) || '—');
+word('pctgoal', 'objectif', (r) => F.share(r.progression));
+word('jourdate', 'jour', (r) => F.day(r.jour));
+word('passages', 'jour', (r) => String(r.passages));
+word('analyses', 'jour', (r) => String(r.analyses));
+word('ordres', 'jour', (r) => String(r.ordres));
+
+dash.draw('evochg', (el) => {
+  const r = row('objectif');
+  if (!r) { el.textContent = '—'; el.className = 'chg'; return; }
+  el.textContent = `${F.pct(r.evolution)} depuis le départ (${F.eur(r.valeur_eur - r.depart_eur)})`;
+  el.className = 'chg ' + tone(r.evolution);
+});
+
+dash.draw('progress', (el) => {
+  const r = row('objectif');
+  const fill = document.createElement('div');
+  fill.className = 'fill';
+  fill.style.width = r ? `${Math.max(r.progression * 100, r.progression > 0 ? 1 : 0)}%` : '0%';
+  el.replaceChildren(fill);
+});
+
+dash.draw('pos', (tb) => {
+  const d = dash.data('positions');
+  tb.replaceChildren();
+  if (d.status !== 'ok') return;
+  d.data.forEach((p, i) => {
+    const tr = tb.insertRow();
+    tr.insertCell().textContent = p.action;
+    const c = tr.insertCell(), wrap = document.createElement('div'), bar = document.createElement('div'), fill = document.createElement('i'), lab = document.createElement('span');
+    wrap.className = 'partcell'; bar.className = 'mini';
+    fill.style.width = `${Math.max(0, Math.min(1, +p.part)) * 100}%`;
+    fill.style.background = p.action === 'Liquidités' ? 'var(--cds-chart-muted)' : 'var(--tm-accent)';
+    lab.textContent = F.share(+p.part);
+    bar.append(fill); wrap.append(bar, lab); c.append(wrap);
+    const v = tr.insertCell(); v.className = 'r'; v.textContent = F.eur(+p.valeur_eur);
+  });
+});
+
+dash.draw('feed', (ul) => {
+  const d = dash.data('decisions');
+  ul.replaceChildren();
+  if (d.status !== 'ok') { ul.textContent = '—'; return; }
+  d.data.slice(0, 12).forEach((x) => {
+    const li = document.createElement('li'), head = document.createElement('div');
+    head.className = 'head';
+    const tk = document.createElement('span'); tk.className = 'tk'; tk.textContent = x.action;
+    const b = document.createElement('span'); b.className = 'badge ' + (F.tone[x.note] || 'flat');
+    b.textContent = (F.note[x.note] || x.note) + (x.conviction ? ' · conviction ' + String(x.conviction).toLowerCase() : '');
+    const w = document.createElement('span'); w.className = 'when'; w.textContent = F.day(x.date);
+    head.append(tk, b, w);
+    const p = document.createElement('p'); p.textContent = x.resume || '';
+    li.append(head, p);
+    ul.append(li);
+  });
+});
+
+dash.draw('ord', (tb) => {
+  const d = dash.data('ordres');
+  tb.replaceChildren();
+  if (d.status !== 'ok') return;
+  d.data.forEach((o) => {
+    const tr = tb.insertRow();
+    tr.dataset.key = [o.moment, o.action].map(encodeURIComponent).join(',');
+    tr.insertCell().textContent = F.when(o.moment);
+    tr.insertCell().textContent = o.action;
+    const s = tr.insertCell(); s.textContent = o.sens; s.className = o.sens === 'achat' ? 'up' : 'down';
+    const m = tr.insertCell(); m.className = 'r'; m.textContent = F.eur(+o.montant_eur);
+  });
+});
+
+dash.onData(() => {
+  const d = dash.data('ordres');
+  document.querySelectorAll('[data-empty=ordres]').forEach((e) => { e.hidden = !(d.status === 'ok' && d.data.length === 0); });
+  document.querySelectorAll('[data-sw]').forEach((e) => { e.style.background = ['var(--tm-accent)', '#e6e6e6'][+e.dataset.sw]; });
+});
+
+dash.draw('courbe', (el) => {
+  el.replaceChildren();
+  const d = dash.data('valeur');
+  if (d.status !== 'ok' || !d.data.length) return;
+  const pts = d.data.map((r) => ({ m: r.moment, t: new Date(String(r.moment).replace(' ', 'T')), v: +r.valeur_eur, dep: +r.depart_eur })).filter((p) => !isNaN(p.t));
+  if (!pts.length) return;
+  const W = Math.max(el.clientWidth, 260), H = 200, dep = pts[pts.length - 1].dep;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Valeur du portefeuille dans le temps');
+  const lo = d3.min(pts, (p) => Math.min(p.v, dep)), hi = d3.max(pts, (p) => Math.max(p.v, dep)), pad = Math.max((hi - lo) * 0.15, 1);
+  const y = d3.scaleLinear([lo - pad, hi + pad], [H - 24, 8]).nice();
+  const ticks = y.ticks(4), fmt = (v) => F.eur(v).replace(/,00/, '');
+  const probe = svg.append('text').attr('font-size', 12);
+  const ml = d3.max(ticks, (t) => { probe.text(fmt(t)); return probe.node().getComputedTextLength(); }) + 10;
+  probe.remove();
+  let t0 = pts[0].t, t1 = pts[pts.length - 1].t;
+  if (+t0 === +t1) { t0 = new Date(+t0 - 36e5); t1 = new Date(+t1 + 36e5); }
+  const x = d3.scaleTime([t0, t1], [ml, W - 8]);
+  svg.append('g').selectAll('line').data(ticks).join('line').attr('x1', ml).attr('x2', W - 8).attr('y1', y).attr('y2', y).attr('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(ticks).join('text').attr('x', ml - 8).attr('y', y).attr('dy', '0.32em').attr('text-anchor', 'end').attr('font-size', 12).attr('fill', 'var(--color-fg-muted)').text(fmt);
+  svg.append('line').attr('x1', ml).attr('x2', W - 8).attr('y1', y(dep)).attr('y2', y(dep)).attr('stroke', 'var(--cds-chart-reference)').attr('stroke-dasharray', '4 4');
+  const xt = x.ticks(Math.max(2, Math.floor((W - ml) / 110)));
+  svg.append('g').selectAll('text').data(xt).join('text').attr('x', x).attr('y', H - 6).attr('text-anchor', 'middle').attr('font-size', 12).attr('fill', 'var(--color-fg-muted)')
+    .text((t) => t.toLocaleDateString('fr-BE', { day: 'numeric', month: 'short' }) + (t.getHours() ? ' ' + t.getHours() + 'h' : ''));
+  const c = pts[pts.length - 1].v >= dep ? 'var(--color-ok)' : 'var(--color-bad)';
+  svg.append('path').datum(pts).attr('fill', 'none').style('stroke', 'var(--tm-accent)').attr('stroke-width', 2.5).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round').attr('d', d3.line((p) => x(p.t), (p) => y(p.v)));
+  svg.append('circle').attr('cx', x(pts[pts.length - 1].t)).attr('cy', y(pts[pts.length - 1].v)).attr('r', 4).attr('fill', c);
+  const dot = svg.append('circle').attr('r', 4).style('fill', 'var(--tm-accent)').style('display', 'none');
+  const tip = d3.select(el).append('div').attr('class', 'tip').style('display', 'none');
+  svg.on('pointermove', (ev) => {
+    const [mx] = d3.pointer(ev), i = d3.leastIndex(pts, (p) => Math.abs(x(p.t) - mx)), p = pts[i];
+    dot.style('display', null).attr('cx', x(p.t)).attr('cy', y(p.v));
+    tip.style('display', null).html('');
+    tip.append('span').text(F.when(p.m));
+    tip.append('div').text(F.eur(p.v));
+    const tw = tip.node().offsetWidth, px = x(p.t) / W * el.clientWidth;
+    tip.style('left', `${Math.max(0, Math.min(el.clientWidth - tw, px - tw / 2))}px`).style('top', '0px');
+  }).on('pointerleave', () => { dot.style('display', 'none'); tip.style('display', 'none'); });
+});
+
+dash.draw('activ', (el) => {
+  el.replaceChildren();
+  const d = dash.data('activite');
+  if (d.status !== 'ok' || !d.data.length) return;
+  const rows = d.data.map((r) => ({ jour: r.jour, a: +r.analyses, o: +r.ordres }));
+  const W = Math.max(el.clientWidth, 260), H = 200, mt = 18, mb = 24;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Analyses et ordres par jour');
+  const x = d3.scaleBand(rows.map((r) => r.jour), [0, W]).paddingInner(0.3).paddingOuter(0.15);
+  const sub = d3.scaleBand(['a', 'o'], [0, x.bandwidth()]).padding(0.1);
+  const y = d3.scaleLinear([0, Math.max(1, d3.max(rows, (r) => Math.max(r.a, r.o)))], [H - mb, mt]);
+  svg.append('line').attr('x1', 0).attr('x2', W).attr('y1', H - mb).attr('y2', H - mb).attr('stroke', 'var(--cds-chart-axis)');
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (r) => `translate(${x(r.jour)},0)`);
+  ['a', 'o'].forEach((k, i) => {
+    const bw = Math.min(sub.bandwidth(), 32), off = sub(k) + (sub.bandwidth() - bw) / 2;
+    g.append('rect').attr('x', off).attr('width', bw).attr('y', (r) => y(r[k])).attr('height', (r) => y(0) - y(r[k])).attr('rx', 3).style('fill', i ? '#e6e6e6' : 'var(--tm-accent)');
+    g.append('text').attr('x', off + bw / 2).attr('y', (r) => y(r[k]) - 4).attr('text-anchor', 'middle').attr('font-size', 12).attr('fill', 'var(--color-fg-muted)').text((r) => r[k]);
+  });
+  const every = Math.ceil(rows.length / Math.max(1, Math.floor(W / 70)));
+  g.filter((r, i) => i % every === 0).append('text').attr('x', x.bandwidth() / 2).attr('y', H - 6).attr('text-anchor', 'middle').attr('font-size', 12).attr('fill', 'var(--color-fg-muted)').text((r) => F.day(r.jour));
+});
+})();</script>
+
+<script>(function () {
+const F = window.tmFmt;
+const where = (el) => Object.fromEntries(new URLSearchParams(el.getAttribute('data-where') || ''));
+const mate = (el) => {
+  const d = dash.data('equipe');
+  if (d.status !== 'ok') return null;
+  const w = where(el);
+  return d.data.find((r) => Object.keys(w).every((k) => String(r[k]) === w[k])) || null;
+};
+const roleRow = (id) => { const d = dash.data('equipe'); return d.status === 'ok' ? d.data.find((r) => r.role_id === id) : null; };
+
+const VERDICT = { Buy: ['Acheter', 'up'], Overweight: ['Renforcer', 'up'], Hold: ['Garder', 'flat'], Underweight: ['Alléger', 'down'], Sell: ['Vendre', 'down'],
+  'au travail': ['Équipe au travail', 'up'], pause: ['Équipe en pause', 'down'], inconnu: ['Pas encore de contrôle', 'flat'], 'Exécute': ['Prêt', 'flat'] };
+
+dash.draw('verdict', (el) => {
+  const r = mate(el), v = r && r.verdict;
+  const [txt, tone] = v ? (VERDICT[v] || [v, 'flat']) : ['', 'flat'];
+  el.textContent = r ? txt : '—';
+  el.className = 'verdict ' + tone;
+});
+dash.draw('dit', (el) => { const r = mate(el); el.textContent = r ? (r.dit || 'Rien à signaler.') : '—'; });
+dash.draw('runtk', (el) => { const r = roleRow('pm'); el.textContent = r && r.action ? r.action : '—'; });
+dash.draw('runday', (el) => { const r = roleRow('pm'); el.textContent = r && r.jour ? F.day(r.jour) : '—'; });
+
+// Planning des 3 routines (heure belge) : un passage à :05, :25 et :45, de 15h05 à 21h45, du lundi au vendredi ; un passage dure environ 10 minutes.
+const SLOTS = [];
+for (let h = 15; h <= 21; h++) for (const m of [5, 25, 45]) SLOTS.push(h * 60 + m);
+const RUN_MIN = 10;
+const bxl = () => {
+  const p = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Brussels', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+    .formatToParts(new Date()).map((x) => [x.type, x.value]));
+  return { wk: !['Sat', 'Sun'].includes(p.weekday), min: +p.hour * 60 + +p.minute, fri: p.weekday === 'Fri' };
+};
+const hm = (m) => `${Math.floor(m / 60)}h${String(m % 60).padStart(2, '0')}`;
+
+dash.draw('live', {
+  mount: () => setInterval(() => dash.draw('live'), 30000),
+  update: (el) => {
+    const s = roleRow('superviseur'), now = bxl(), paused = !!(s && s.verdict === 'pause');
+    let txt, on = false;
+    if (paused) txt = "En pause : le quota Claude est presque épuisé. Le superviseur relancera l'équipe dès qu'il sera rechargé.";
+    else if (!now.wk) txt = 'Week-end : la bourse américaine est fermée. Reprise lundi à 15h05.';
+    else {
+      const cur = SLOTS.find((t) => now.min >= t && now.min < t + RUN_MIN), next = SLOTS.find((t) => t > now.min);
+      if (cur !== undefined) { on = true; txt = `En plein travail : passage de ${hm(cur)} en cours (selon le planning).`; }
+      else if (next !== undefined) txt = `Entre deux passages. Prochain à ${hm(next)}.`;
+      else txt = now.fri ? 'Journée terminée. Reprise lundi à 15h05.' : 'Journée terminée. Reprise demain à 15h05.';
+    }
+    el.textContent = txt;
+    el.classList.toggle('on', on); el.classList.toggle('off', !on && paused);
+    document.querySelectorAll('[data-org]').forEach((o) => o.classList.toggle('busy', on));
+  },
+  unmount: (el, timer) => clearInterval(timer),
+});
+
+document.querySelectorAll('.mate').forEach((m) => m.addEventListener('click', () => m.classList.toggle('open')));
+
+// Petits bonhommes en pixels (grille 16 x 16), chacun déguisé en personnage qui résume son rôle.
+const O = '#D97757', EYE = '#141413', GOLD = '#e0b341', DARK = '#222222', WHITE = '#f4f1ea';
+const BODY = [[2, 5, 12, 8], [0, 9, 2, 2], [14, 9, 2, 2], [3, 13, 1, 2], [5, 13, 1, 2], [10, 13, 1, 2], [12, 13, 1, 2]];
+const EYES = [[4, 7, 1, 2], [11, 7, 1, 2]];
+const GLASSES = [[3, 6, 3, 3, '#cfe8ff'], [10, 6, 3, 3, '#cfe8ff'], [6, 7, 4, 1, DARK]];
+const COSTUME = {
+  // le guetteur : casquette et jumelles, il surveille tout d'en haut
+  superviseur: [[4, 2, 8, 3, '#1f2a44'], [4, 4, 8, 1, GOLD], [7, 2, 2, 1, GOLD]],
+  pm: [[4, 3, 8, 2, GOLD], [4, 1, 1, 2, GOLD], [7, 1, 2, 2, GOLD], [11, 1, 1, 2, GOLD], [7, 3, 2, 1, '#c0392b'], [7, 9, 2, 1, '#c0392b'], [7, 10, 2, 3, '#a93226']],
+  reflecteur: [[7, 0, 2, 1, '#6c4ab6'], [6, 1, 4, 1, '#6c4ab6'], [5, 2, 6, 1, '#6c4ab6'], [4, 3, 8, 1, '#6c4ab6'], [3, 4, 10, 1, '#6c4ab6'], [8, 2, 1, 1, '#f1c40f'], [6, 3, 1, 1, '#f1c40f'], [14, 6, 2, 2, '#7fc8f8']],
+  robot: [[7, 3, 2, 2, '#7f8c8d'], [7, 2, 2, 1, '#e74c3c'], [6, 10, 4, 2, '#5d6670'], [7, 10, 1, 1, '#2ecc71']],
+  // le viking : il fonce
+  agressif: [[4, 3, 8, 2, '#95a5a6'], [3, 4, 10, 1, '#7f8c8d'], [7, 2, 2, 1, '#95a5a6'], [2, 2, 1, 2, WHITE], [1, 1, 1, 1, WHITE], [13, 2, 1, 2, WHITE], [14, 1, 1, 1, WHITE], [5, 11, 6, 2, '#a0522d']],
+  // le juge : perruque, robe et marteau
+  neutre: [[3, 2, 10, 3, '#f5f5f5'], [2, 4, 2, 4, '#f5f5f5'], [12, 4, 2, 4, '#f5f5f5'], [2, 11, 12, 2, DARK], [6, 10, 4, 1, '#f5f5f5'], [14, 5, 2, 2, '#8b5e3c'], [14, 7, 1, 2, '#6d4c41']],
+  // le chevalier : casque, plumet et bouclier pour protéger le capital
+  prudent: [[3, 2, 10, 3, '#bdc3c7'], [3, 4, 10, 1, '#95a5a6'], [7, 0, 2, 2, '#c0392b'], [12, 7, 4, 5, '#2e5aac'], [14, 8, 1, 3, GOLD], [13, 9, 3, 1, GOLD]],
+  trader: [[3, 3, 10, 1, '#2c3e50'], [2, 4, 1, 3, '#2c3e50'], [13, 4, 1, 3, '#2c3e50'], [1, 6, 2, 3, '#2c3e50'], [13, 6, 2, 3, '#2c3e50'], [4, 5, 8, 1, '#2ecc71'], [3, 10, 3, 1, '#2c3e50']],
+  rm: [[3, 3, 10, 1, DARK], [5, 4, 6, 1, DARK], [12, 4, 1, 3, GOLD], ...GLASSES],
+  // l'ange : il défend l'achat (auréole, ailes, joues roses)
+  bull: [[5, 1, 6, 1, GOLD], [5, 3, 6, 1, GOLD], [4, 2, 1, 1, GOLD], [11, 2, 1, 1, GOLD], [0, 4, 2, 4, '#ffffff'], [1, 3, 1, 1, '#ffffff'], [14, 4, 2, 4, '#ffffff'], [14, 3, 1, 1, '#ffffff'], [3, 9, 1, 1, '#f4a3a3'], [12, 9, 1, 1, '#f4a3a3']],
+  // le petit démon : il cherche les failles (cornes, fourche, queue)
+  bear: [[3, 3, 1, 2, '#b71c1c'], [2, 2, 1, 1, '#b71c1c'], [12, 3, 1, 2, '#b71c1c'], [13, 2, 1, 1, '#b71c1c'], [14, 3, 1, 6, '#5d1010'], [13, 1, 1, 2, '#8e1b1b'], [14, 1, 1, 2, '#8e1b1b'], [15, 1, 1, 2, '#8e1b1b'], [13, 3, 3, 1, '#8e1b1b'], [1, 13, 1, 1, '#b71c1c'], [0, 12, 1, 1, '#b71c1c'], [0, 11, 1, 1, '#b71c1c']],
+  marche: [...GLASSES, [9, 0, 7, 4, WHITE], [10, 3, 1, 1, '#27ae60'], [11, 2, 2, 1, '#27ae60'], [13, 1, 2, 1, '#27ae60'], [12, 4, 1, 1, '#8b5e3c']],
+  sentiment: [[0, 0, 6, 4, WHITE], [4, 4, 1, 1, WHITE], [1, 1, 1, 1, '#e74c3c'], [3, 1, 1, 1, '#e74c3c'], [1, 2, 3, 1, '#e74c3c'], [2, 3, 1, 1, '#e74c3c'], [14, 6, 2, 3, DARK]],
+  actualites: [[5, 2, 6, 3, '#5d4037'], [3, 4, 10, 1, '#5d4037'], [5, 3, 6, 1, '#3e2723'], [9, 2, 2, 1, WHITE], [12, 9, 4, 3, '#ecf0f1'], [12, 10, 4, 1, '#95a5a6']],
+  // le comptable : lunettes, crayon sur l'oreille, calculatrice
+  fondamentaux: [...GLASSES, [13, 2, 1, 1, '#e8a0a0'], [13, 3, 1, 3, '#f1c40f'], [6, 10, 1, 2, '#8e44ad'], [9, 10, 1, 2, '#8e44ad'], [7, 10, 2, 1, '#8e44ad'], [12, 9, 4, 4, '#34495e'], [13, 10, 2, 1, '#a8e6a1'], [13, 12, 1, 1, '#ecf0f1'], [14, 12, 1, 1, '#ecf0f1']],
+};
+// dessiné par-dessus les yeux
+const FRONT = {
+  superviseur: [[3, 6, 4, 3, '#2c3e50'], [9, 6, 4, 3, '#2c3e50'], [7, 7, 2, 1, '#2c3e50'], [4, 7, 2, 1, '#7fc8f8'], [10, 7, 2, 1, '#7fc8f8']],
+};
+const EYE_COLOR = { robot: '#3fd0e0', bear: '#ff3b30' };
+const rect = ([x, y, w, h, c]) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${c}"/>`;
+const avatar = (kind) => {
+  const body = BODY.map(([x, y, w, h]) => rect([x, y, w, h, kind === 'robot' ? '#9aa3ad' : O]));
+  const eyes = EYES.map(([x, y, w, h]) => rect([x, y, w, h, EYE_COLOR[kind] || EYE]).replace('<rect', '<rect class="eye"'));
+  return `<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">${body.join('')}${(COSTUME[kind] || []).map(rect).join('')}${eyes.join('')}${(FRONT[kind] || []).map(rect).join('')}</svg>`;
+};
+dash.draw('avatar', (el) => { el.innerHTML = avatar(el.dataset.kind); });
+})();</script>
+
+<script>(function () {
+const PANELS = ['accueil', 'equipe', 'decisions', 'argent'];
+const showTab = (name, scroll) => {
+  document.querySelectorAll('[data-panel]').forEach((p) => { p.hidden = p.dataset.panel !== name; });
+  document.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === name)));
+  dash.setLink(name);
+  if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => showTab(t.dataset.tab, true)));
+const start = location.hash.slice(1);
+if (PANELS.includes(start)) showTab(start, false);
+})();</script>
